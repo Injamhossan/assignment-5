@@ -23,37 +23,45 @@
 <body class="hind-madurai-regular bg-[#f5fff6]">
     <main>
         <!-- NavBar Design -->
-        <nav class="bg-white">
-            <div class="max-w-[1600px] m-auto pt-5 pb-5">
-                <div class="mx-auto flex justify-between items-center">
-                    <div class="flex gap-2 items-center">
-                        <div>
-                            <img src="assets/logo.png" alt="" class="max-h-[55px] max-w-[55px]">
-                        </div>
-                        <div>
-                            <h1 class="text-[#006747] text-[25px] leading-6 font-extrabold">Emergency <br> Service</h1>
-                        </div>
-                    </div>
+<nav class="bg-white">
+  <div class="max-w-[1600px] mx-auto pt-5 pb-5 px-4">
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
 
-                    <div class="flex gap-5">
-                        <div
-                            class="flex gap-2 bg-[#41ff6b1a] items-center rounded-[50px] min-w-[123px] h-[52px] justify-center">
-                            <h2 class="love-count font-bold text-[16px]">0</h2>
-                            <img src="assets/heart.png" alt="" class="h-[30px] w-[30px]">
-                        </div>
-                        <div
-                            class="flex gap-2 bg-[#41ff6b1a] items-center rounded-[50px] w-[123px] h-[52px] justify-center">
-                            <h2 id="coin-count" class="font-bold text-[16px]">100</h2>
-                            <img src="assets/coin.png" alt="" class="h-[30px] w-[30px]">
-                        </div>
-                        <div
-                            class="flex gap-2 bg-[#00A63E] items-center rounded-[50px] w-[123px] h-[52px] justify-center">
-                            <h2 class="font-bold text-[16px] text-white"><span class="copy-count">0</span> Copy</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+      <!-- Logo -->
+      <div class="flex gap-2 items-center justify-center sm:justify-start mb-3 sm:mb-0">
+        <img src="assets/logo.png" alt="Logo" class="h-[50px] w-[50px] sm:h-[55px] sm:w-[55px]">
+        <h1 class="text-[#006747] text-[22px] sm:text-[25px] leading-6 font-extrabold text-center sm:text-left">
+          Emergency <br class="hidden sm:block"> Service
+        </h1>
+      </div>
+
+      <!-- Counters -->
+      <div class="flex flex-row justify-center sm:justify-end gap-2 sm:gap-5 items-center">
+
+        <!-- Love -->
+        <div class="flex gap-1 sm:gap-2 bg-[#41ff6b1a] items-center rounded-[50px] min-w-[90px] sm:min-w-[123px] h-[40px] sm:h-[52px] px-2 sm:px-0 justify-center">
+          <h2 class="love-count font-bold text-[14px] sm:text-[16px]">0</h2>
+          <img src="assets/heart.png" alt="Heart" class="h-[22px] w-[22px] sm:h-[30px] sm:w-[30px]">
+        </div>
+
+        <!-- Coin -->
+        <div class="flex gap-1 sm:gap-2 bg-[#41ff6b1a] items-center rounded-[50px] min-w-[90px] sm:min-w-[123px] h-[40px] sm:h-[52px] px-2 sm:px-0 justify-center">
+          <h2 id="coin-count" class="font-bold text-[14px] sm:text-[16px]">100</h2>
+          <img src="assets/coin.png" alt="Coin" class="h-[22px] w-[22px] sm:h-[30px] sm:w-[30px]">
+        </div>
+
+        <!-- Copy -->
+        <div class="flex gap-1 sm:gap-2 bg-[#00A63E] items-center rounded-[50px] min-w-[90px] sm:min-w-[123px] h-[40px] sm:h-[52px] px-2 sm:px-0 justify-center">
+          <h2 class="font-bold text-[14px] sm:text-[16px] text-white">
+            <span class="copy-count">0</span> Copy
+          </h2>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
     </main>
 
     <!-- Banner Section -->
