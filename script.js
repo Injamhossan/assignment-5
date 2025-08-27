@@ -67,21 +67,47 @@ document.querySelectorAll('.call-btn').forEach(btn => {
     const title = card.querySelector('.emergency-title').innerText;
     const number = card.querySelector('.emergency-number').innerText;
     
-    // Deduct coin if coin element exists
     if(coinCountEl){
       if(coinCount >= 20){
         coinCount -= 20;
         coinCountEl.textContent = coinCount;
       } else {
         alert('Insufficient coins! Please recharge.');
-        return; // Stop further execution
+        return;
       }
     }
     
     // Add call to history
     addCallToHistory(title, number);
     
-    // Show call alert
     alert(`Calling ${title} (${number})...`);
   });
 });
+
+
+// Clear history
+document.querySelector('.clear-history').addEventListener('click', () => {
+    document.querySelector('.history-list').innerHTML = '';
+});
+
+// Add call to history
+function addCallToHistory(title, number) {
+    const historyList = document.querySelector('.history-list');
+    const callItem = document.createElement('div');
+    
+    callItem.classList.add(
+        'bg-gray-50', 'rounded-lg', 'p-4',
+        'flex', 'justify-between', 'items-start',
+        'shadow-sm'
+    );
+
+    callItem.innerHTML = `
+        <div>
+            <h4 class="text-[16px] font-semibold text-gray-800">${title}</h4>
+            <p class="text-[14px] text-gray-500">${number}</p>
+        </div>
+        <span class="text-[13px] text-gray-400">${getCurrentTime()}</span>
+    `;
+    
+    historyList.prepend(callItem);
+}
