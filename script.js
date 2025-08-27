@@ -1,8 +1,7 @@
-
 let totalLoved = 0;
 let totalCopied = 0;
 
-// Navbar spans
+// Navbar Love
 const loveCountSpan = document.querySelector('.love-count');
 const copyCountSpan = document.querySelector('.copy-count');
 
@@ -18,3 +17,40 @@ function getCurrentTime() {
 }
 
 // Add call to history
+function addCallToHistory(title, number) {
+    const historyList = document.querySelector('.history-list');
+    const callItem = document.createElement('div');
+    callItem.classList.add('flex', 'justify-between', 'text-sm', 'text-gray-600');
+    callItem.innerHTML = `<span>${title} (${number})</span><span>${getCurrentTime()}</span>`;
+    historyList.prepend(callItem);
+}
+
+// Love button
+document.querySelectorAll('.love-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const icon = btn.querySelector('.love-icon');
+        if(icon.classList.contains('fa-regular')){
+            icon.classList.remove('fa-regular','text-gray-500');
+            icon.classList.add('fa-solid','text-red-500');
+            totalLoved++;
+        } else {
+            icon.classList.remove('fa-solid','text-red-500');
+            icon.classList.add('fa-regular','text-gray-500');
+            totalLoved--;
+        }
+        loveCountSpan.innerText = totalLoved;
+    });
+});
+
+// Copy button
+document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const card = btn.closest('.emergency-card');
+        const number = card.querySelector('.emergency-number').innerText;
+        navigator.clipboard.writeText(number).then(() => {
+            totalCopied++;
+            copyCountSpan.innerText = totalCopied;
+            alert(`Copied ${number} to clipboard!`);
+        });
+    });
+});
