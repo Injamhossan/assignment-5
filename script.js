@@ -54,3 +54,34 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
         });
     });
 });
+
+
+// Coin count
+const coinCountEl = document.getElementById('coin-count');
+let coinCount = coinCountEl ? parseInt(coinCountEl.textContent) : 0;
+
+// Call button
+document.querySelectorAll('.call-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.emergency-card');
+    const title = card.querySelector('.emergency-title').innerText;
+    const number = card.querySelector('.emergency-number').innerText;
+    
+    // Deduct coin if coin element exists
+    if(coinCountEl){
+      if(coinCount >= 20){
+        coinCount -= 20;
+        coinCountEl.textContent = coinCount;
+      } else {
+        alert('Insufficient coins! Please recharge.');
+        return; // Stop further execution
+      }
+    }
+    
+    // Add call to history
+    addCallToHistory(title, number);
+    
+    // Show call alert
+    alert(`Calling ${title} (${number})...`);
+  });
+});
