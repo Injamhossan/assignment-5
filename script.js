@@ -1,23 +1,20 @@
-let loveCount = 0;
-const loveCounterSpan = document.getElementById("love-count");
 
-document.querySelectorAll("#love-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const icon = btn.querySelector("#love-icon");
+let totalLoved = 0;
+let totalCopied = 0;
 
-    if (icon.classList.contains("fa-regular")) {
-      // Like হলো
-      icon.classList.remove("fa-regular", "text-gray-500");
-      icon.classList.add("fa-solid", "text-black");
-      loveCount++;
-    } else {
-      // Unlike হলো
-      icon.classList.remove("fa-solid", "text-black");
-      icon.classList.add("fa-regular", "text-gray-500");
-      if(loveCount > 0) loveCount--; // count 0 এর নিচে যাবে না
-    }
+// Navbar spans
+const loveCountSpan = document.querySelector('.love-count');
+const copyCountSpan = document.querySelector('.copy-count');
 
-    // Counter update
-    loveCounterSpan.textContent = loveCount;
-  });
-});
+// Get current time
+function getCurrentTime() {
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12;
+    return `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')} ${ampm}`;
+}
+
+// Add call to history
