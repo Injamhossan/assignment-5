@@ -19,3 +19,5 @@
 - **preventDefault()**: Browser er default action stop kore (e.g. form submit block).  
 - **stopPropagation()**: Event parent dike na jae, only current element e kaj kore.  
 - Both use: `e.preventDefault(); e.stopPropagation();` jodi default action block + bubbling stop korte chai.
+
+- Live link : 
