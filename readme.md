@@ -20,4 +20,5 @@
 - **stopPropagation()**: Event parent dike na jae, only current element e kaj kore.  
 - Both use: `e.preventDefault(); e.stopPropagation();` jodi default action block + bubbling stop korte chai.
 
-- Live link : 
+ 
+ ## Live link : https://injamhossan.github.io/assignment-5/ 
